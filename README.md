@@ -1,3 +1,25 @@
+
+## Up docker compose mysql
+docker compose up -d
+
+docker compose exec db bash
+
+mysql -uroot -proot
+SHOW DATABASES;
+
+
+## Prisma
+npx prisma init
+npx prisma migrate dev
+
+
+## VSCode extensions
+REST client
+prisma
+
+
+## NestJS
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
