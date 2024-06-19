@@ -4,7 +4,9 @@ GET http://localhost:3000
 ###
 GET http://localhost:3000/events
 
+
 ###
+# @name createEvent
 POST http://localhost:3000/events
 Content-Type: application/json
 
@@ -15,14 +17,16 @@ Content-Type: application/json
     "price": 100
 }
 
-
 ###
-GET http://localhost:3000/events/cd1607f2-a58c-442c-90f5-51b1b883e857
-
+@eventId = {{ createEvent.response.body.id }}
 
 
 ###
-PATCH http://localhost:3000/events/cd1607f2-a58c-442c-90f5-51b1b883e857
+GET http://localhost:3000/events/{{eventId}}
+
+
+###
+PATCH http://localhost:3000/events/{{eventId}}
 Content-Type: application/json
 
 {
@@ -32,5 +36,6 @@ Content-Type: application/json
     "price": 500
 }
 
+
 ###
-DELETE http://localhost:3000/events/cd1607f2-a58c-442c-90f5-51b1b883e857
+DELETE http://localhost:3000/events/{{eventId}}
